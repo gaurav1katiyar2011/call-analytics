@@ -1,0 +1,37 @@
+{
+  "name": "ssr",
+  "version": "4.0.0",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "latest",
+    "@babel/node": "latest",
+    "@babel/plugin-proposal-class-properties": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/preset-react": "latest",
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "^4.9.1",
+    "babel-loader": "latest",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cross-env": "latest",
+    "express": "latest",
+    "highcharts": "^8.1.0",
+    "highcharts-react-official": "^3.0.0",
+    "nodemon": "latest",
+    "npm-run-all": "latest",
+    "pg": "^8.2.1",
+    "pg-format": "^1.0.4",
+    "react": "latest",
+    "react-csv-reader": "^3.0.6",
+    "react-dom": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest"
+  },
+  "scripts": {
+    "start": "npm-run-all -p build serve",
+    "build": "webpack -w",
+    "serve": "nodemon --ignore ./build --exec babel-node -- server.js",
+    "production": "cross-env NODE_ENV=production npm start",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  }
+}
